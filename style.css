@@ -1,0 +1,154 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f0f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+}
+
+h1 {
+    color: #ff69b4;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.heart {
+    font-size: 120px;
+    margin-bottom: 20px;
+}
+
+.message {
+    font-size: 22px;
+    margin-bottom: 30px;
+    color: #f47a92;
+}
+
+.buttons button {
+    font-size: 20px;
+    padding: 15px 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#yesButton {
+    background-color: #ff69b4;
+    color: white;
+}
+
+#noButton {
+    background-color: #f7a7c4;
+    color: white;
+    font-weight: bold;
+}
+
+#yesButton:hover {
+    background-color: #ff1493;
+    transform: scale(1.05);
+}
+
+#noButton:hover {
+    background-color: #f47a92;
+    transform: scale(1.05);
+}
+
+#responseMessage {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #ff69b4;
+}
+
+/* Animation for the No button */
+@keyframes moveNoButton {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-50px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideAway {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+}
+
+.movingNoButton {
+    animation: moveNoButton 0.5s ease-in-out;
+}
+
+.slideAwayNoButton {
+    animation: slideAway 1s forwards;
+}
+
+/* Confetti animation */
+@keyframes confettiFall {
+    0% {
+        top: -10%;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+#confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: none;
+}
+
+.confettiPiece {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #ff69b4;
+    border-radius: 50%;
+    animation: confettiFall 1.5s ease-in infinite;
+}
+
+.confettiPiece:nth-child(2) {
+    background-color: #ff1493;
+    animation-duration: 2s;
+}
+
+.confettiPiece:nth-child(3) {
+    background-color: #f47a92;
+    animation-duration: 1.8s;
+}
+
+.confettiPiece:nth-child(4) {
+    background-color: #ffd700;
+    animation-duration: 2.5s;
+}
